@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.btnNbreClients = new System.Windows.Forms.Button();
             this.btnMoyenneSolde = new System.Windows.Forms.Button();
@@ -71,6 +71,7 @@
             this.btnMoyenneSolde.TabIndex = 1;
             this.btnMoyenneSolde.Text = "Moyenne des soldes";
             this.btnMoyenneSolde.UseVisualStyleBackColor = true;
+            this.btnMoyenneSolde.Click += new System.EventHandler(this.btnMoyenneSolde_Click);
             // 
             // btnSoldeMin
             // 
@@ -80,6 +81,7 @@
             this.btnSoldeMin.TabIndex = 2;
             this.btnSoldeMin.Text = "Solde Minimum";
             this.btnSoldeMin.UseVisualStyleBackColor = true;
+            this.btnSoldeMin.Click += new System.EventHandler(this.btnSoldeMin_Click);
             // 
             // btnSoldeMax
             // 
@@ -89,6 +91,7 @@
             this.btnSoldeMax.TabIndex = 3;
             this.btnSoldeMax.Text = "Solde Maximum";
             this.btnSoldeMax.UseVisualStyleBackColor = true;
+            this.btnSoldeMax.Click += new System.EventHandler(this.btnSoldeMax_Click);
             // 
             // btnSommeSoldes
             // 
@@ -98,6 +101,7 @@
             this.btnSommeSoldes.TabIndex = 4;
             this.btnSommeSoldes.Text = "Somme des soldes";
             this.btnSommeSoldes.UseVisualStyleBackColor = true;
+            this.btnSommeSoldes.Click += new System.EventHandler(this.btnSommeSoldes_Click);
             // 
             // txtCountClients
             // 
@@ -138,8 +142,8 @@
             // 
             this.dgvClients.AllowUserToAddRows = false;
             this.dgvClients.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.dgvClients.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.dgvClients.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvClients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvClients.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -209,6 +213,7 @@
             this.btnNouveauClient.Text = "Nouveau Client";
             this.btnNouveauClient.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNouveauClient.UseVisualStyleBackColor = true;
+            this.btnNouveauClient.Click += new System.EventHandler(this.btnNouveauClient_Click);
             // 
             // imageList1
             // 
@@ -229,6 +234,7 @@
             this.btnSupprimerClient.Text = "Supprimer Client";
             this.btnSupprimerClient.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSupprimerClient.UseVisualStyleBackColor = true;
+            this.btnSupprimerClient.Click += new System.EventHandler(this.btnSupprimerClient_Click);
             // 
             // Form1
             // 
@@ -252,6 +258,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Les fonctions d\'agrégation";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClients)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

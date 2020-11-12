@@ -62,8 +62,60 @@ namespace TP_Fonctions_Agregation
             }
             return obj;
         }
+        static public OleDbDataReader ExecuterOleDBSelect(string strSQL, OleDbConnection objCN)
+        {
+            OleDbDataReader objDR = null;
+            OleDbCommand objCOM = new OleDbCommand(strSQL, objCN);
+            try
+            {
+                objDR = objCOM.ExecuteReader();
+            }
+            catch (Exception)
+            {
 
-      
+                throw;
+            }
+            return objDR;
+        }
+        static public int ExecuterOleDBAction(string strSQL, OleDbConnection objCN)
+        {
+            int nb = -1;
+            OleDbCommand objCOM = new OleDbCommand(strSQL, objCN);
+            try
+            {
+                nb = objCOM.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            return nb;
+        }
+
+        static public int ExecuterOleDBAction(string strSQL, OleDbConnection objCN, params Object[] objPM)
+        {
+            int nb = -1;
+            OleDbCommand objCOM = new OleDbCommand(strSQL, objCN);
+            try
+            {
+                foreach (Object obj in objPM)
+                {
+                    OleDbParameter param = new OleDbParameter();
+                    param.Value = obj;
+                    objCOM.Parameters.Add(param);
+                }
+                nb = objCOM.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            return nb;
+        }
+
+
 
     }
 }
