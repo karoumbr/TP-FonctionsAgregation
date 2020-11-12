@@ -1,0 +1,10 @@
+C:\Users\karou\source\repos\Solution 1-tiers\TP Fonctions Agregation\bin\Debug\TP Fonctions Agregation.exe.config
+C:\Users\karou\source\repos\Solution 1-tiers\TP Fonctions Agregation\bin\Debug\TP Fonctions Agregation.exe
+C:\Users\karou\source\repos\Solution 1-tiers\TP Fonctions Agregation\bin\Debug\TP Fonctions Agregation.pdb
+C:\Users\karou\source\repos\Solution 1-tiers\TP Fonctions Agregation\obj\Debug\TP Fonctions Agregation.csprojAssemblyReference.cache
+C:\Users\karou\source\repos\Solution 1-tiers\TP Fonctions Agregation\obj\Debug\TP_Fonctions_Agregation.Form1.resources
+C:\Users\karou\source\repos\Solution 1-tiers\TP Fonctions Agregation\obj\Debug\TP_Fonctions_Agregation.Properties.Resources.resources
+C:\Users\karou\source\repos\Solution 1-tiers\TP Fonctions Agregation\obj\Debug\TP Fonctions Agregation.csproj.GenerateResource.cache
+C:\Users\karou\source\repos\Solution 1-tiers\TP Fonctions Agregation\obj\Debug\TP Fonctions Agregation.csproj.CoreCompileInputs.cache
+C:\Users\karou\source\repos\Solution 1-tiers\TP Fonctions Agregation\obj\Debug\TP Fonctions Agregation.exe
+C:\Users\karou\source\repos\Solution 1-tiers\TP Fonctions Agregation\obj\Debug\TP Fonctions Agregation.pdb
