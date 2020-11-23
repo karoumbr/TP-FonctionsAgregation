@@ -115,7 +115,76 @@ namespace TP_Fonctions_Agregation
             return nb;
         }
 
+        static public int ExecuterOleDBActionNomsParams(string strSQL, OleDbConnection objCN, Object[,] objPM)
+        {
+            int nb = -1;
+            OleDbCommand objCOM = new OleDbCommand(strSQL, objCN);
+            try
+            {
+                for (int i =0; i< objPM.GetLength(0); i++)
+                {
+                    objCOM.Parameters.AddWithValue((String)objPM[i, 0], objPM[i, 1]);
+                }
+                        
+                nb = objCOM.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
 
+                throw;
+            }
+            return nb;
+        }
 
+        static public String CleanString(String str)
+        {
+            if (str.Contains("'"))
+            {
+                str = str.Replace("'", "''");
+                return str;
+            }
+            return str;
+        }
+
+        static public bool ExecuterTransaction(String strCN, params string[] tabSQL)
+        {
+            bool ok;
+            OleDbCommand objCOM = new OleDbCommand();
+            OleDbTransaction transact;
+            try
+            {
+                OleDbConnection objCN = seConnecter(strCN);
+                objCOM.Connection = objCN;
+                transact = objCN.BeginTransaction();
+                objCOM.Transaction = transact;
+                try
+                {
+                       foreach(string strSQL in tabSQL)
+                    {
+                        objCOM.CommandText = strSQL;
+                        int i = objCOM.ExecuteNonQuery();
+                    }
+                    transact.Commit();
+                    ok = true;
+                }
+                catch (Exception)
+                {
+                    transact.Rollback();
+                    ok = false;
+                   
+                }
+                finally
+                {
+                    seDeconnecter(objCN);
+                }
+
+            }
+            catch (Exception)
+            {
+                ok = false;
+               
+            }
+            return ok;
+        }
     }
 }
